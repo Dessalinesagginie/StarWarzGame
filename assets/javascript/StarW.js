@@ -3,12 +3,12 @@ let yourCharacter
 let ahsoka = {
   name: "Ahsoka",
   healthPoints: 150,
-  attackPower: 150,
-  counterAttackPower: 125
+  attackPower:  15,
+  counterAttackPower:125
 }
 
 let kyloRen = {
-  name: "KyloRen",
+  name: "Kylo-Ren",
   healthPoints: 150,
   attackPower: 150,
   counterAttackPower: 125
@@ -29,6 +29,8 @@ let yoda = {
 
 $("#Ahsoka").on("click", function() {
   yourCharacter = ahsoka; 
+  // move the 3 remaining fighters to the Defender area.
+  $("#Defender-area").text("Ahsoka");  
 });
 
 $(".Kylo-Ren").on("click", function() {
@@ -42,3 +44,4 @@ $(".Rey").on("click", function() {
 $(".Yoda").on("click", function() {
   yourCharacter = yoda; 
 });
+
