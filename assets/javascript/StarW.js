@@ -20,6 +20,7 @@ let rey = {
   attackPower: 150,
   counterAttackPower: 125
 }
+
 let yoda = {
   name: "Yoda",
   healthPoints: 175,
@@ -29,19 +30,29 @@ let yoda = {
 
 $("#Ahsoka").on("click", function() {
   yourCharacter = ahsoka; 
-  // move the 3 remaining fighters to the Defender area.
-  $("#Defender-area").text("Ahsoka");  
+  $("#Defender-area").append($(".Rey"));
+  $("#Defender-area").append($(".Kylo-Ren"));
+  $("#Defender-area").append($(".Yoda"));
 });
 
 $(".Kylo-Ren").on("click", function() {
-  yourCharacter = kylo-ren; 
+  yourCharacter = kyloRen; 
+  $("#Defender-area").append($("#Ahsoka"));
+  $("#Defender-area").append($(".Rey"));
+  $("#Defender-area").append($(".Yoda"));
 });
 
 $(".Rey").on("click", function() {
-  yourCharacter = rey; 
+  yourCharacter = rey;
+  $("#Defender-area").append($("#Ahsoka"));
+  $("#Defender-area").append($(".Yoda")); 
+  $("#Defender-area").append($(".Kylo-Ren"));
 });
 
 $(".Yoda").on("click", function() {
   yourCharacter = yoda; 
+  $("#Defender-area").append($("#Ahsoka"));
+  $("#Defender-area").append($(".Kylo-Ren")); 
+  $("#Defender-area").append($(".Rey"));
 });
 
