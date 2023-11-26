@@ -30,29 +30,29 @@ let yoda = {
 
 $("#Ahsoka").on("click", function() {
   yourCharacter = ahsoka; 
-  $("#Defender-area").append($(".Rey"));
-  $("#Defender-area").append($(".Kylo-Ren"));
-  $("#Defender-area").append($(".Yoda"));
+  $("#enemies-to-attack").append($(".Rey"));
+  $("#enemies-to-attack").append($(".Kylo-Ren"));
+  $("#enemies-to-attack").append($(".Yoda"));
 });
 
 $(".Kylo-Ren").on("click", function() {
   yourCharacter = kyloRen; 
-  $("#Defender-area").append($("#Ahsoka"));
-  $("#Defender-area").append($(".Rey"));
-  $("#Defender-area").append($(".Yoda"));
+  $("#enemies-to-attack").append($("#Ahsoka"));
+  $("#enemies-to-attack").append($(".Rey"));
+  $("#enemies-to-attack").append($(".Yoda"));
 });
 
 $(".Rey").on("click", function() {
   yourCharacter = rey;
-  $("#Defender-area").append($("#Ahsoka"));
-  $("#Defender-area").append($(".Yoda")); 
-  $("#Defender-area").append($(".Kylo-Ren"));
+  $("#enemies-to-attack").append($("#Ahsoka"));
+  $("#enemies-to-attack").append($(".Yoda")); 
+  $("#enemies-to-attack").append($(".Kylo-Ren"));
 });
 
 $(".Yoda").on("click", function() {
   yourCharacter = yoda; 
-  $("#Defender-area").append($("#Ahsoka"));
-  $("#Defender-area").append($(".Kylo-Ren")); 
-  $("#Defender-area").append($(".Rey"));
+  $("#enemies-to-attack").append($("#Ahsoka"));
+  $("#enemies-to-attack").append($(".Kylo-Ren")); 
+  $("#enemies-to-attack").append($(".Rey"));
 });
 
