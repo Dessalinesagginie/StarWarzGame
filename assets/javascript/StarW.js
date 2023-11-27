@@ -56,3 +56,4 @@ $(".Yoda").on("click", function() {
   $("#enemies-to-attack").append($(".Rey"));
 });
 
+// 1.Click on opponent, 2.move op to defender area
