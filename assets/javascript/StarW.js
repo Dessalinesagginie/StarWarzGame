@@ -1,4 +1,5 @@
 let yourCharacter
+
 let yourOpponent 
 
 let ahsoka = {
@@ -13,6 +14,7 @@ let kyloRen = {
   healthPoints: 150,
   attackPower: 150,
   counterAttackPower: 125
+  
 }
 
 let rey = {
@@ -22,6 +24,7 @@ let rey = {
   counterAttackPower: 125
 }
 
+
 let yoda = {
   name: "Yoda",
   healthPoints: 175,
@@ -30,7 +33,8 @@ let yoda = {
 }
 
 
-$("#Ahsoka").on("click", function() {
+
+$(".Ahsoka").on("click", function() {
   yourCharacter = ahsoka; 
   $("#enemies-to-attack").append($(".Rey"));
   $("#enemies-to-attack").append($(".Kylo-Ren"));
@@ -42,6 +46,7 @@ $("#Ahsoka").on("click", function() {
     //  block of code to be executed if the condition is true}
     
   if (ahsoka= yourCharacter) {
+    Rey = yourOpponent 
     $("#defender-area").append($(".Rey"));
   }
 });
