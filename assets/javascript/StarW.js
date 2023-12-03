@@ -1,38 +1,57 @@
-let yourCharacter 
+let yourCharacter
+
+let yourOpponent 
 
 let ahsoka = {
   name: "Ahsoka",
-  healthPoints: 150,
+  healthPoints: 165,
   attackPower:  15,
   counterAttackPower:125
 }
 
 let kyloRen = {
   name: "Kylo-Ren",
-  healthPoints: 150,
+  healthPoints: 175,
   attackPower: 150,
   counterAttackPower: 125
+  
 }
 
 let rey = {
   name: "Rey",
-  healthPoints: 150,
+  healthPoints: 160,
   attackPower: 150,
   counterAttackPower: 125
 }
 
+
 let yoda = {
   name: "Yoda",
-  healthPoints: 175,
+  healthPoints: 190,
   attackPower: 160,
   counterAttackPower: 150
 }
 
-$("#Ahsoka").on("click", function() {
+
+$(".img class").on("click", function() { 
   yourCharacter = ahsoka; 
+  //   // Show yourCharacter's name and healthPoints next to image
+  $(".section-title").append(yourCharacter["name"]);
+  $(".section-title").append(yourCharacter["healthPoints"]);
   $("#enemies-to-attack").append($(".Rey"));
   $("#enemies-to-attack").append($(".Kylo-Ren"));
   $("#enemies-to-attack").append($(".Yoda"));
+  $(".section-title").append(yourCharacter["healthPoints"]);
+})
+
+
+$(".Ahsoka").on("click", function() {
+  if (ahsoka= yourCharacter) {
+    Rey = yourOpponent 
+    $("#defender-area").append($(".Rey"));
+    $(".your-oppnent").append(yourOpponent["name"])
+    $(".your-oppnent").append(yourOpponent[ "healthPoints"]);
+  }
 });
 
 $(".Kylo-Ren").on("click", function() {
@@ -56,3 +75,29 @@ $(".Yoda").on("click", function() {
   $("#enemies-to-attack").append($(".Rey"));
 });
 
+// place click function on character Class instead of on an individual character
+
+$(".img class").on("click", function() {
+   if (yourCharacter=== undefined) {
+
+    if (firstNumber === undefined) {
+      // sets value for the 1st number
+      firstNumber = $(this).val(); 
+      $("#first-number").text(firstNumber);  
+    }
+//     else { //concatenate firstNumber
+//       firstNumber = firstNumber + $(this).val() ;
+//       $("#first-number").text(firstNumber);
+//     }
+//   }
+//   else {
+//     if (secondNumber === undefined) {
+//       secondNumber = $(this).val()
+//       $("#second-number").text(secondNumber);
+//     } 
+//     else {
+//       secondNumber = secondNumber + $(this).val() ;
+//       $("#second-number").text(secondNumber);
+//     }
+//   }
+// });
