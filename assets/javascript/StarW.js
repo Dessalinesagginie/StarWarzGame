@@ -28,6 +28,10 @@ let yoda = {
   counterAttackPower: 150
 }
 
+var fighter;
+  
+var opposition = []; 
+
 $("#Ahsoka").on("click", function() {
   yourCharacter = ahsoka; 
   $("#Defender-area").append($(".Rey"));
