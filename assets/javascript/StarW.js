@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 $(document).ready(function() {
   
   let yourCharacter = {
@@ -102,32 +103,67 @@ $(renderArea).append(charDiv);
 
 
 
+=======
+let yourCharacter 
 
-// $(".Ahsoka").on("click", function() {
-//   yourCharacter = ahsoka; 
-//   $("#enemies-to-attack").append($(".Rey"));
-//   $("#enemies-to-attack").append($(".Kylo-Ren"));
-//   $("#enemies-to-attack").append($(".Yoda"));
-// });
+let ahsoka = {
+  name: "Ahsoka",
+  healthPoints: 150,
+  attackPower:  15,
+  counterAttackPower:125
+}
 
-// $(".Kylo-Ren").on("click", function() {
-//   yourCharacter = kyloRen; 
-//   $("#enemies-to-attack").append($("#Ahsoka"));
-//   $("#enemies-to-attack").append($(".Rey"));
-//   $("#enemies-to-attack").append($(".Yoda"));
-// });
+let kyloRen = {
+  name: "Kylo-Ren",
+  healthPoints: 150,
+  attackPower: 150,
+  counterAttackPower: 125
+}
+>>>>>>> c3f297761d62bc3f1e5c8201bd2e51e4a6d062aa
 
-// $(".Rey").on("click", function() {
-//   yourCharacter = rey;
-//   $("#enemies-to-attack").append($("#Ahsoka"));
-//   $("#enemies-to-attack").append($(".Yoda")); 
-//   $("#enemies-to-attack").append($(".Kylo-Ren"));
-// });
+let rey = {
+  name: "Rey",
+  healthPoints: 150,
+  attackPower: 150,
+  counterAttackPower: 125
+}
 
-// $(".Yoda").on("click", function() {
-//   yourCharacter = yoda; 
-//   $("#enemies-to-attack").append($("#Ahsoka"));
-//   $("#enemies-to-attack").append($(".Kylo-Ren")); 
-//   $("#enemies-to-attack").append($(".Rey"));
-// });
+let yoda = {
+  name: "Yoda",
+  healthPoints: 175,
+  attackPower: 160,
+  counterAttackPower: 150
+}
+
+var fighter;
+  
+var opposition = []; 
+
+$("#Ahsoka").on("click", function() {
+  yourCharacter = ahsoka; 
+  $("#Defender-area").append($(".Rey"));
+  $("#Defender-area").append($(".Kylo-Ren"));
+  $("#Defender-area").append($(".Yoda"));
+});
+
+$(".Kylo-Ren").on("click", function() {
+  yourCharacter = kyloRen; 
+  $("#Defender-area").append($("#Ahsoka"));
+  $("#Defender-area").append($(".Rey"));
+  $("#Defender-area").append($(".Yoda"));
+});
+
+$(".Rey").on("click", function() {
+  yourCharacter = rey;
+  $("#Defender-area").append($("#Ahsoka"));
+  $("#Defender-area").append($(".Yoda")); 
+  $("#Defender-area").append($(".Kylo-Ren"));
+});
+
+$(".Yoda").on("click", function() {
+  yourCharacter = yoda; 
+  $("#Defender-area").append($("#Ahsoka"));
+  $("#Defender-area").append($(".Kylo-Ren")); 
+  $("#Defender-area").append($(".Rey"));
+});
 
