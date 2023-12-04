@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 $(document).ready(function() {
   
   let yourCharacter = {
@@ -103,23 +102,6 @@ $(renderArea).append(charDiv);
 
 
 
-=======
-let yourCharacter 
-
-let ahsoka = {
-  name: "Ahsoka",
-  healthPoints: 150,
-  attackPower:  15,
-  counterAttackPower:125
-}
-
-let kyloRen = {
-  name: "Kylo-Ren",
-  healthPoints: 150,
-  attackPower: 150,
-  counterAttackPower: 125
-}
->>>>>>> c3f297761d62bc3f1e5c8201bd2e51e4a6d062aa
 
 let rey = {
   name: "Rey",
