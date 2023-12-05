@@ -31,7 +31,10 @@ $(document).ready(function() {
     };
 
     let renderCharacter = function(character, renderArea) {
-        console.log();
+        console.log(renderArea);
+        let charDiv = $("<div class='character' data-name='" + character.name + "'>");
+       
+        $(renderArea).append(charDiv);
     };
 
     let initializeGame = function() {
@@ -43,3 +46,6 @@ $(document).ready(function() {
     initializeGame();
 
 });
+
+
+// Line 89, next append charName
