@@ -34,6 +34,12 @@ $(document).ready(function() {
         console.log(renderArea);
         let charDiv = $("<div class='character' data-name='" + character.name + "'>");
        
+        let charName = $("<div class='character-name'>").text(character.name);
+
+        // work on let charImage
+
+        charDiv.append(charName);
+
         $(renderArea).append(charDiv);
     };
 
@@ -48,4 +54,3 @@ $(document).ready(function() {
 });
 
 
-// Line 89, next append charName
