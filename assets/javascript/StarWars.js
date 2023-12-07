@@ -36,10 +36,12 @@ $(document).ready(function() {
        
         let charName = $("<div class='character-name'>").text(character.name);
 
-        // work on let charImage
+        let charImage = $("<img alt='image' class='character-image'>").attr("src", character.imageUrl);
+
+        // let charHealth & .append(charImage);
 
         charDiv.append(charName);
-
+        charDiv.append(charImage);
         $(renderArea).append(charDiv);
     };
 
