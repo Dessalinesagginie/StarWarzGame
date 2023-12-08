@@ -52,34 +52,7 @@ $(document).ready(function() {
   // This function will render a character card to the page.
   // The character rendered, the area they are rendered to, and their status is determined by the arguments passed in.
   var renderCharacter = function(character, renderArea) {
-    /*
-      character:
-      {
-      name: "Luke Skywalker",
-      health: 100,
-      attack: 14,
-      imageUrl: "assets/images/luke-skywalker.jpg",
-      enemyAttackBack: 5
-      },
-
-      renderArea: "#characters-section"
-
-      charDiv:
-       <div class='character' data-name='Luke Skywalker'>
-        <div class='character-name'>Luke Skywalker</div>
-        <img class= src="assets/images/Luke Skywalker" alt='image'character-image'>
-        <div class='character-health'>100</div> 
-       </div>
-      
-      charName: <div class='character-name'>Obi-Wan Kenobi</div>
-
-      charImage: <img class= src="assets/images/obi-wan.jpg" alt='image'character-image'> 
-
-      charHealth: <div class='character-health'>120</div> 
-   
-    */
     
-    // This block of code builds the character card, and renders it to the page.
     var charDiv = $("<div class='character' data-name='" + character.name + "'>");
     
     var charName = $("<div class='character-name'>").text(character.name);
@@ -87,7 +60,7 @@ $(document).ready(function() {
     var charImage = $("<img alt='image' class='character-image'>").attr("src", character.imageUrl);
   
     var charHealth = $("<div class='character-health'>").text(character.health);
-    charDiv.append(charName).append(charImage).append(charHealth);
+    charDiv.append(charName).append(charHealth).append(charImage);
     $(renderArea).append(charDiv);
   };
 

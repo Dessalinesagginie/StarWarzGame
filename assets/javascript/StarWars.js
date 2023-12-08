@@ -31,18 +31,20 @@ $(document).ready(function() {
     };
 
     let renderCharacter = function(character, renderArea) {
-        console.log(renderArea);
+       
         let charDiv = $("<div class='character' data-name='" + character.name + "'>");
        
         let charName = $("<div class='character-name'>").text(character.name);
 
         let charImage = $("<img alt='image' class='character-image'>").attr("src", character.imageUrl);
 
-        // let charHealth & .append(charImage);
-
+        let charHealth = $("<div class='character-health'>").text(character.healthPoints);
+       
         charDiv.append(charName);
+        charDiv.append(charHealth);
         charDiv.append(charImage);
         $(renderArea).append(charDiv);
+        console.log(character);
     };
 
     let initializeGame = function() {
@@ -55,4 +57,4 @@ $(document).ready(function() {
 
 });
 
-
+// "#characters-section" click function &(data-name)
