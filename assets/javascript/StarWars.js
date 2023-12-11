@@ -29,6 +29,10 @@ $(document).ready(function() {
             counterAttackPower: 30
         }
     };
+    
+    let attacker;
+
+    let combatants = [];
 
     let renderCharacter = function(character, renderArea) {
        
@@ -44,7 +48,6 @@ $(document).ready(function() {
         charDiv.append(charHealth);
         charDiv.append(charImage);
         $(renderArea).append(charDiv);
-        console.log(character);
     };
 
     let initializeGame = function() {
@@ -55,6 +58,19 @@ $(document).ready(function() {
 
     initializeGame();
 
+    $("#characters-section").on("click", ".character", function() {
+        let name = $(this).attr("data-name");
+        if (!attacker) {
+            // console.log(attacker);
+            attacker = characters[name];
+            for (let key in characters) {
+              if (key !== name) {
+                combatants.push(characters[key]);
+              }
+            }
+        }
+    });
 });
 
-// "#characters-section" click function &(data-name)
+
+
