@@ -60,14 +60,11 @@ $(document).ready(function() {
 
     $("#characters-section").on("click", ".character", function() {
         let name = $(this).attr("data-name");
-        if (!attacker) {
-            // console.log(attacker);
+        if (attacker) {
+            console.log(attacker.name, name);
+        } else {
             attacker = characters[name];
-            for (let key in characters) {
-              if (key !== name) {
-                combatants.push(characters[key]);
-              }
-            }
+            console.log(attacker.name, name);
         }
     });
 });
