@@ -58,15 +58,28 @@ $(document).ready(function() {
 
     initializeGame();
 
+    let updateCharacter = function() {
+        console.log("updateCharacter");
+        
+    }
+
     $("#characters-section").on("click", ".character", function() {
         let name = $(this).attr("data-name");
-        if (attacker) {
-            console.log(attacker.name, name);
-        } else {
+        if (!attacker) {
             attacker = characters[name];
-            console.log(attacker.name, name);
+       
+            for (let key in characters){
+                if (key !== name){
+                    // console.log("Des");
+                    combatants.push(characters[key]);
+                }
+            }
+
+            $("#characters-section").hide();
+
+            updateCharacter();
         }
-    });
+    })
 });
 
 
