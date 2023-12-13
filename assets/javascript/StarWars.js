@@ -58,10 +58,16 @@ $(document).ready(function() {
 
     initializeGame();
 
-    let updateCharacter = function() {
-        console.log("updateCharacter");
-        
-    }
+    let updateCharacter = function(charObj, areaRender) {
+        $(areaRender).empty();
+        renderCharacter(charObj, areaRender);
+    };
+
+    let renderEnemies = function(enemyArr) {
+        for (let i = 0; i < enemyArr.length; i++) {
+            renderCharacter(enemyArr[i], "#available-to-attack-section");
+        }
+    };  
 
     $("#characters-section").on("click", ".character", function() {
         let name = $(this).attr("data-name");
@@ -70,16 +76,19 @@ $(document).ready(function() {
        
             for (let key in characters){
                 if (key !== name){
-                    // console.log("Des");
+                    
                     combatants.push(characters[key]);
                 }
             }
 
             $("#characters-section").hide();
 
-            updateCharacter();
+            updateCharacter(attacker, "#selected-character");
+            renderEnemies(combatants);
         }
-    })
+    });
+
+     // Create an on click event for each enemy.
 });
 
 
