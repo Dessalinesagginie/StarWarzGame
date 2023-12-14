@@ -34,6 +34,11 @@ $(document).ready(function() {
 
     let combatants = [];
 
+    let defender;
+
+    
+
+
     let renderCharacter = function(character, renderArea) {
        
         let charDiv = $("<div class='character' data-name='" + character.name + "'>");
@@ -69,6 +74,12 @@ $(document).ready(function() {
         }
     };  
 
+    let clearMessage = function() {
+        let gameMessage = $("#game-message");
+
+        gameMessage.text("");
+    };
+
     $("#characters-section").on("click", ".character", function() {
         let name = $(this).attr("data-name");
         if (!attacker) {
@@ -87,8 +98,21 @@ $(document).ready(function() {
             renderEnemies(combatants);
         }
     });
+    
+    // Create an on click event for each enemy.
+    $("#available-to-attack-section").on("click", ".character", function() {
+        let name = $(this).attr("data-name");
+        if ($("#defender").children().length === 0) {
+            defender = characters[name];
+            updateCharacter(defender, "#defender");
 
-     // Create an on click event for each enemy.
+            $(this).remove();
+            clearMessage();
+        }
+
+    });
+    // the attack button click
+
 });
 
 
