@@ -113,6 +113,10 @@ $(document).ready(function() {
     });
     // the attack button click
 
+    $("#attack-button").on("click", function() {
+        
+    })
+
 });
 
 
