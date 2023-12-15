@@ -36,6 +36,8 @@ $(document).ready(function() {
 
     let defender;
 
+    var turnCounter = 1;
+
     
 
 
@@ -114,7 +116,17 @@ $(document).ready(function() {
     // the attack button click
 
     $("#attack-button").on("click", function() {
-        
+    
+        let isDefender = $("#defender").children().length !== 0;
+        if (isDefender) {
+            let attackMessage = "You attacked " + defender.name + " for " + attacker.attackPower * turnCounter + " damage.";
+            let counterAttackMessage = defender.name + " attacked you back for " + defender.counterAttackPower + " damage.";
+            console.log(counterAttackMessage);
+
+            //clear message declaration and call
+
+        }
+       
     })
 
 });
