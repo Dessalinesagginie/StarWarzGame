@@ -101,7 +101,6 @@ $(document).ready(function() {
         }
     });
     
-    // Create an on click event for each enemy.
     $("#available-to-attack-section").on("click", ".character", function() {
         let name = $(this).attr("data-name");
         if ($("#defender").children().length === 0) {
@@ -113,7 +112,6 @@ $(document).ready(function() {
         }
 
     });
-    // the attack button click
 
     $("#attack-button").on("click", function() {
     
@@ -121,10 +119,8 @@ $(document).ready(function() {
         if (isDefender) {
             let attackMessage = "You attacked " + defender.name + " for " + attacker.attackPower * turnCounter + " damage.";
             let counterAttackMessage = defender.name + " attacked you back for " + defender.counterAttackPower + " damage.";
-            console.log(counterAttackMessage);
-
-            //clear message declaration and call
-
+            clearMessage();
+            // console.log(counterAttackMessage);
         }
        
     })
