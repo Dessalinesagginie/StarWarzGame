@@ -76,6 +76,13 @@ $(document).ready(function() {
         }
     };  
 
+    let renderMessage = function(message) {
+        let gameMessageSet = $("#game-message");
+        let newMessage = $("<div>").text(message);
+        // console.log(newMessage);
+        gameMessageSet.append(newMessage);
+    };
+
     let clearMessage = function() {
         let gameMessage = $("#game-message");
 
@@ -120,7 +127,16 @@ $(document).ready(function() {
             let attackMessage = "You attacked " + defender.name + " for " + attacker.attackPower * turnCounter + " damage.";
             let counterAttackMessage = defender.name + " attacked you back for " + defender.counterAttackPower + " damage.";
             clearMessage();
-            // console.log(counterAttackMessage);
+            
+            defender.healthPoints -= attacker.attackPower * turnCounter;
+            
+            if (defender.healthPoints > 0) {
+                // console.log(counterAttackMessage);
+                updateCharacter(defender, "#defender");
+
+                renderMessage(attackMessage);
+                // next line to copy: line 226, renderMessage("No enemy here.");
+            }
         }
        
     })
