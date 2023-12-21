@@ -83,6 +83,17 @@ $(document).ready(function() {
         gameMessageSet.append(newMessage);
     };
 
+    let restartGame = function(resultMessage) {
+        let restart = $("<button>Restart</button>").click(function() {
+            location.reload();
+        });
+        
+        let gameState = $("<div>").text(resultMessage);
+        // console.log("Des");
+        $("body").append(gameState);
+        $("body").append(restart);
+    };
+
     let clearMessage = function() {
         let gameMessage = $("#game-message");
 
@@ -131,11 +142,20 @@ $(document).ready(function() {
             defender.healthPoints -= attacker.attackPower * turnCounter;
             
             if (defender.healthPoints > 0) {
-                // console.log(counterAttackMessage);
                 updateCharacter(defender, "#defender");
-
+                
                 renderMessage(attackMessage);
-                // next line to copy: line 226, renderMessage("No enemy here.");
+                renderMessage(counterAttackMessage);
+                
+                attacker.healthPoints -= defender.counterAttackPower;
+                
+                updateCharacter(attacker, "#selected-character");
+                
+                if (attacker.healthPoints <= 0) {
+                    clearMessage();
+                    restartGame("You Won!!!! GAME OVER!!!");
+                    //next line 198    $("#attack-button").off("click");    
+                }
             }
         }
        
