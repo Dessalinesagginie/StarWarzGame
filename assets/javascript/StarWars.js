@@ -2,31 +2,31 @@ $(document).ready(function() {
     let characters = {
         "Ahsoka": {
             name: "Ahsoka",
-            healthPoints: 160,
-            attackPower:  9,
+            healthPoints: 10,
+            attackPower:  1,
             imageUrl: "assets/images/Ahsoka-Tano.jpg",
-            counterAttackPower:20
+            counterAttackPower:1
         },
         "Kylo-Ren": {
             name: "Kylo-Ren",
-            healthPoints: 150,
-            attackPower: 10,
+            healthPoints: 3,
+            attackPower: 1,
             imageUrl: "assets/images/ben-solo-kylo-ren.jpg",
-            counterAttackPower:25
+            counterAttackPower:1
         },
         "Rey": {
             name: "Rey",
-            healthPoints: 170,
-            attackPower: 8,
+            healthPoints: 3,
+            attackPower: 1,
             imageUrl: "assets/images/Rey.jpg",
-            counterAttackPower:30
+            counterAttackPower:1
         },
         "Yoda": {
             name: "Yoda",
-            healthPoints: 175,
-            attackPower: 12,
+            healthPoints: 2,
+            attackPower: 1,
             imageUrl: "assets/images/Yoda.jpg",
-            counterAttackPower: 30
+            counterAttackPower: 1
         }
     };
     
@@ -36,9 +36,9 @@ $(document).ready(function() {
 
     let defender;
 
-    var turnCounter = 1;
+    let turnCounter = 1;
 
-    
+    let killCount = 0;
 
 
     let renderCharacter = function(character, renderArea) {
@@ -153,15 +153,34 @@ $(document).ready(function() {
                 
                 if (attacker.healthPoints <= 0) {
                     clearMessage();
-                    restartGame("You Won!!!! GAME OVER!!!");
-                    //next line 198    $("#attack-button").off("click");    
+                    restartGame("You have been defeated...GAME OVER!!!");
+                    $("#attack-button").off("click");
                 }
             }
-        }
-       
-    })
+            else {
+                $("#defender").empty();
 
+                let gameStateMessage = "You have defeated " + defender.name + ", you can choose to fight another enemy.";
+                renderMessage(gameStateMessage);
+
+                killCount++;
+
+                // console.log(turkillCount >= combatants.length);
+                if (killCount >= combatants.length) {
+                    clearMessage();
+                    $("#attack-button").off("click");
+                    restartGame("You Won!!!! GAME OVER!!!");
+                }
+            }  
+            turnCounter++;
+        }
+        else {
+            clearMessage();
+            renderMessage("No enemy here.");
+        }
+    });
 });
 
+// Adjust character healthPoints
 
 
