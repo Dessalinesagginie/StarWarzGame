@@ -179,7 +179,7 @@ $(document).ready(function() {
             renderMessage("No enemy here.");
         }
     });
-});
+});  
 
 // Adjust character healthPoints
 
